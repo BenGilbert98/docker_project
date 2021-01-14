@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = sudo docker.build("beng98/eng74_docker_project")
+        app = docker.build("beng98/eng74_docker_project")
     }
 
     stage('Push image') {
