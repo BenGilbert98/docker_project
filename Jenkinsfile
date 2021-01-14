@@ -24,4 +24,9 @@ node {
             app.push("latest")
         }
     }
+    
+    stage('Cleaning images'){
+        docker system prune -af --volumes
+    }
+
 }
