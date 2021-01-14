@@ -26,7 +26,7 @@ node {
     }
     
     stage('Cleaning images'){
-        docker system prune -af --volumes
+        sh"docker system prune -af"
     }
 
 }
