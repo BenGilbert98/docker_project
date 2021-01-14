@@ -6,11 +6,12 @@ dockerImage = ''
 }
 agent any
 stages {
-stage('Cloning our Git') {
-steps {
-git 'https://github.com/BenGilbert98/docker_project.git'
+stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+
+checkout scm
 }
-}
+
 stage('Building our image') {
 steps{
 script {
