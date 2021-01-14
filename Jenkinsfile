@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("beng98/eng74_docker_project")
+        app = sudo docker.build("beng98/eng74_docker_project")
     }
 
     stage('Push image') {
@@ -20,8 +20,8 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_id') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+            sudo app.push("${env.BUILD_NUMBER}")
+            sudo app.push("latest")
         }
     }
 }
