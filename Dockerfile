@@ -28,7 +28,7 @@
 FROM node as App
 
 # Who edited this docker file
-LABEL MAINTAINER=msokol@spartaglobal.com
+LABEL MAINTAINER=bgilbert@spartaglobal.com
 
 # Choose the working directory
 WORKDIR /usr/src/app
@@ -53,8 +53,6 @@ WORKDIR /usr/src/app
 
 RUN npm install 
 
-RUN 
-
 # Default port 3000
 EXPOSE 3000
 
@@ -62,4 +60,4 @@ EXPOSE 3000
 # CMD command cd /seeds && npm run postinstall && node app.js
 # CMD command cd /usr/src/app/seeds, donpm run postinstall, node app.js
 # CMD ["npm", "run", "seed"]
-# CMD ["node", "app.js"]
+CMD ["node", "app.js"]
