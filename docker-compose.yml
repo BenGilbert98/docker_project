@@ -12,6 +12,7 @@ services:
   
   nodejs_app:
       build: .
+      image: beng98/eng74_docker_project
       # image: 41872654f22b 
       # image: 29c245827663 #nodeapp_js
       # image: 6dc9afb7e1cf #nodeapp_js_test
