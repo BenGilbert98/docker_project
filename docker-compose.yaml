@@ -1,0 +1,28 @@
+services:
+  nodejs_app:
+    container_name: app
+    #build: .
+    image: beng98/eng74_docker_project
+      # image: 41872654f22b
+      # image: 29c245827663 #nodeapp_js
+      # image: 6dc9afb7e1cf #nodeapp_js_test
+      # image: 49d13ea8d29f
+    environment:
+      - DB_HOST=mongodb://db:27017/posts
+    links:
+      - db
+    ports:
+      - "3000:3000"
+      # command: bash -c "cd /usr/src/app/seeds"
+      # command: bash -c "ls"
+      # command: "npm run postinstall"
+      # command: "npm start app.js"
+
+  db:
+    container_name: database
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongod.conf:/etc/mongod.conf

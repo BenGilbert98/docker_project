@@ -58,6 +58,6 @@ EXPOSE 3000
 
 # Start app with CMD | node
 # CMD command cd /seeds && npm run postinstall && node app.js
-# CMD command cd /usr/src/app/seeds, donpm run postinstall, node app.js
+# CMD command cd /usr/src/app/seeds, donpm run postinstall, node app.js 
 # CMD ["npm", "run", "seed"]
 CMD ["node", "app.js"]
